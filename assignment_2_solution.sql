@@ -4,7 +4,7 @@
 INSERT INTO rangers (name, region) VALUES ('Derek Fox', 'Coastal Plains');
 
 -- PROBLEM 02
-SELECT count(DISTINCT species_id) from sightings;
+SELECT count(DISTINCT species_id) as unique_species_count from sightings;
 
 -- PROBLEM 03
 SELECT * FROM sightings
@@ -34,7 +34,7 @@ CASE
     WHEN extract(HOUR FROM sighting_time) <12 THEN  'morning'
     WHEN extract(HOUR FROM sighting_time) BETWEEN 12 AND 17 THEN  'afternoon'
     ELSE  'evening'
-END
+END as  time_of_day
 from sightings ;
 
 -- PROBLEM 09
